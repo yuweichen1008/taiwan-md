@@ -1,10 +1,13 @@
 ---
-created: 2026-03-17
-tags: [音樂, Hub]
-source: []
-status: 🌱 初稿（知識庫框架）
+title: "台灣音樂"
+description: "從傳統南管北管到流行音樂，台灣音樂的豐富面貌。"
+date: 2026-03-17T00:00:00Z
+tags: ["Music", "Hub"]
+author: "taiwan.md 社群"
+difficulty: "beginner"
+readingTime: 5
+featured: false
 ---
-
 # 台灣音樂 🎵
 
 > **30 秒概覽：** 台灣音樂從原住民傳統音樂、閩南語歌謠，發展到華語流行音樂的黃金時代，再到當代獨立音樂的多元創新，展現豐富的音樂創作能量。

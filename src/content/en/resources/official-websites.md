@@ -1,10 +1,13 @@
 ---
-created: 2026-03-17
-tags: [resources, government, official, Taiwan.md]
-source: [Obsidian vault]
-status: 🌱 Draft (Taiwan Official Websites Directory)
+title: "Taiwan Official Websites Directory 🏛️"
+description: "**30-Second Overview:** Comprehensive collection of 81+ official websites covering Taiwan's government agencies, cultural institutions, and open data platforms. From the five-branch government system ..."
+date: 2026-03-17T00:00:00Z
+tags: ["台灣", "resources", "government", "official", "Taiwan.md"]
+author: "taiwan.md 社群"
+difficulty: "beginner"
+readingTime: 8
+featured: false
 ---
-
 # Taiwan Official Websites Directory 🏛️
 
 > **30-Second Overview:** Comprehensive collection of 81+ official websites covering Taiwan's government agencies, cultural institutions, and open data platforms. From the five-branch government system to museums, from the Presidential Office to open data platforms - your complete guide to Taiwan's official digital resources.

@@ -1,10 +1,13 @@
 ---
-created: 2026-03-17
-tags: [科技, Hub]
-source: []
-status: 🌱 初稿（知識庫框架）
+title: "台灣科技"
+description: "從半導體產業到開源社群，台灣在科技發展上的成就。"
+date: 2026-03-17T00:00:00Z
+tags: ["Technology", "Hub"]
+author: "taiwan.md 社群"
+difficulty: "beginner"
+readingTime: 5
+featured: false
 ---
-
 # 台灣科技 💻
 
 > **30 秒概覽：** 台灣從電子代工起家，發展成為全球半導體產業的核心，以台積電為代表的「護國神山」支撐著全球科技供應鏈。同時在開源文化、數位民主、社群驅動創新方面也走在世界前端。

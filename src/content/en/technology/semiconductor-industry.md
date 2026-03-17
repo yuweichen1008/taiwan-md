@@ -1,10 +1,13 @@
 ---
-created: 2026-03-17
-tags: [technology, semiconductor, TSMC, industry]
-source: [https://en.wikipedia.org/wiki/TSMC]
-status: 🌱 Draft (English translation)
+title: "Taiwan's Semiconductor Industry (TSMC-Centered)"
+description: "**30-second overview:** Taiwan's semiconductor industry, led by Taiwan Semiconductor Manufacturing Company (TSMC), is the world's most important chip manufacturing base. TSMC dominates global advanced..."
+date: 2026-03-17T00:00:00Z
+tags: ["台灣", "technology", "semiconductor", "TSMC", "industry"]
+author: "taiwan.md 社群"
+difficulty: "beginner"
+readingTime: 8
+featured: false
 ---
-
 # Taiwan's Semiconductor Industry (TSMC-Centered)
 
 > **30-second overview:** Taiwan's semiconductor industry, led by Taiwan Semiconductor Manufacturing Company (TSMC), is the world's most important chip manufacturing base. TSMC dominates global advanced semiconductor process technology and holds the largest market share worldwide. Known as Taiwan's "Sacred Mountain" (護國神山), it maintains an irreplaceable strategic position in the global technology supply chain.

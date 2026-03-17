@@ -1,10 +1,13 @@
 ---
-created: 2026-03-17
-tags: [人物, Hub]
-source: []
-status: 🌱 初稿（知識庫框架）
+title: "台灣人物"
+description: "影響台灣發展的重要人物與其貢獻。"
+date: 2026-03-17T00:00:00Z
+tags: ["People", "Hub"]
+author: "taiwan.md 社群"
+difficulty: "beginner"
+readingTime: 5
+featured: false
 ---
-
 # 台灣人物 👥
 
 > **30 秒概覽：** 從歷史人物到當代名人，這些重要人物塑造了台灣的文化、社會與發展軌跡，展現台灣人的創意與活力。

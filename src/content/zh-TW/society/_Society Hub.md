@@ -1,10 +1,13 @@
 ---
-created: 2026-03-17
-tags: [社會, Hub]
-source: []
-status: 🌱 初稿（知識庫框架）
+title: "台灣社會"
+description: "台灣社會的民主化進程與多元價值的發展。"
+date: 2026-03-17T00:00:00Z
+tags: ["Society", "Hub"]
+author: "taiwan.md 社群"
+difficulty: "beginner"
+readingTime: 5
+featured: false
 ---
-
 # 台灣社會 🏛️
 
 > **30 秒概覽：** 台灣社會從威權走向民主，建立了完善的民主制度與法治基礎。在人權保障、性別平等、轉型正義等方面走在亞洲前列，同時面對高齡化、少子化等現代社會挑戰。

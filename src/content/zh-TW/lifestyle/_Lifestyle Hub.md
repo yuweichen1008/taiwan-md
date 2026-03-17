@@ -1,10 +1,13 @@
 ---
-created: 2026-03-17
-tags: [生活, Hub]
-source: []
-status: 🌱 初稿（知識庫框架）
+title: "台灣生活"
+description: "探索台灣人的日常生活方式與社會制度特色。"
+date: 2026-03-17T00:00:00Z
+tags: ["Lifestyle", "Hub"]
+author: "taiwan.md 社群"
+difficulty: "beginner"
+readingTime: 5
+featured: false
 ---
-
 # 台灣生活 🏠
 
 > **30 秒概覽：** 台灣人的生活方式反映了現代化進程中的獨特選擇，從全民健保到便利商店文化，形成了具有台灣特色的現代生活型態。

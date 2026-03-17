@@ -1,10 +1,13 @@
 ---
-created: 2026-03-17
-tags: [歷史, Hub]
-source: []
-status: 🌱 初稿（知識庫框架）
+title: "台灣歷史"
+description: "從史前時代到現代，台灣歷史的完整脈絡與重要事件。"
+date: 2026-03-17T00:00:00Z
+tags: ["History", "Hub"]
+author: "taiwan.md 社群"
+difficulty: "beginner"
+readingTime: 5
+featured: false
 ---
-
 # 台灣歷史 🏛️
 
 > **30 秒概覽：** 台灣歷史跨越數千年，從南島語族的史前文化開始，歷經荷西殖民、明鄭統治、清朝管理、日本統治，到戰後國民政府遷台、戒嚴、解嚴，最終走向民主化，形成今日多元開放的台灣社會。

@@ -1,10 +1,13 @@
 ---
-created: 2026-03-17
-tags: [美食, Hub]
-source: []
-status: 🌱 初稿（知識庫框架）
+title: "台灣飲食"
+description: "台灣的飲食文化融合各族群特色，形成獨特的美食體系。"
+date: 2026-03-17T00:00:00Z
+tags: ["Food", "Hub"]
+author: "taiwan.md 社群"
+difficulty: "beginner"
+readingTime: 5
+featured: false
 ---
-
 # 台灣美食 🍜
 
 > **30 秒概覽：** 台灣美食融合了閩南、客家、外省、原住民、日式等多元飲食文化，從夜市小吃到精緻料理，形成獨特的「台式」風味。夜市文化更是台灣最具代表性的庶民美食文化。

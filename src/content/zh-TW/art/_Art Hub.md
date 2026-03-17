@@ -1,6 +1,13 @@
 ---
+title: "台灣藝術文化"
+description: "探索台灣豐富的藝術文化傳統，從傳統工藝到當代創作。"
+date: 2026-03-17T00:00:00Z
+tags: ["藝術", "文化", "Hub"]
+author: "taiwan.md 社群"
+difficulty: "beginner"
+readingTime: 5
+featured: false
 created: 2026-03-17
-tags: [藝術, Hub]
 source: []
 status: 🌱 初稿（知識庫框架）
 ---

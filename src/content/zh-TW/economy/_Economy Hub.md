@@ -1,10 +1,13 @@
 ---
-created: 2026-03-17
-tags: [經濟, Hub]
-source: []
-status: 🌱 初稿（知識庫框架）
+title: "台灣經濟"
+description: "從農業社會到科技島國，台灣經濟發展的轉型歷程。"
+date: 2026-03-17T00:00:00Z
+tags: ["Economy", "Hub"]
+author: "taiwan.md 社群"
+difficulty: "beginner"
+readingTime: 5
+featured: false
 ---
-
 # 台灣經濟 💰
 
 > **30 秒概覽：** 台灣經濟從農業社會快速轉型為工業化社會，創造了「台灣奇蹟」，現在正朝向知識經濟與創新服務業發展。

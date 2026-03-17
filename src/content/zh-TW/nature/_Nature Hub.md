@@ -1,10 +1,13 @@
 ---
-created: 2026-03-17
-tags: [自然, Hub]
-source: []
-status: 🌱 初稿（知識庫框架）
+title: "台灣自然"
+description: "台灣雖小卻擁有豐富的生物多樣性與獨特的自然景觀。"
+date: 2026-03-17T00:00:00Z
+tags: ["Nature", "Hub"]
+author: "taiwan.md 社群"
+difficulty: "beginner"
+readingTime: 5
+featured: false
 ---
-
 # 台灣自然 🌿
 
 > **30 秒概覽：** 台灣面積雖小但生物多樣性極高，擁有眾多特有種生物。從高山生態到海洋生物，台灣是珍貴的生物基因庫。

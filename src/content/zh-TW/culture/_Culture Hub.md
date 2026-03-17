@@ -1,10 +1,13 @@
 ---
-created: 2026-03-17
-tags: [文化, Hub]
-source: []
-status: 🌱 初稿（知識庫框架）
+title: "台灣文化"
+description: "了解台灣多元文化的形成與特色，包括各族群的文化傳統。"
+date: 2026-03-17T00:00:00Z
+tags: ["Culture", "Hub"]
+author: "taiwan.md 社群"
+difficulty: "beginner"
+readingTime: 5
+featured: false
 ---
-
 # 台灣文化 🎭
 
 > **30 秒概覽：** 台灣文化是多元族群在島嶼環境中長期互動融合的結果。原住民、閩南、客家、外省、新住民等不同文化傳統，在這塊土地上交融碰撞，形成既保有各自特色又相互影響的豐富文化樣貌。

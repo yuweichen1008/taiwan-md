@@ -1,10 +1,13 @@
 ---
-created: 2026-03-17
-tags: [history, democratization, politics]
-source: [https://en.wikipedia.org/wiki/Taiwan_democratization]
-status: 🌱 Draft (English translation)
+title: "Taiwan's Democracy and Democratization"
+description: "**30-second overview:** Taiwan's democratization refers to the successful transformation from the Chinese Nationalist Party (KMT) one-party authoritarian rule to a democratic, free nation beginning in..."
+date: 2026-03-17T00:00:00Z
+tags: ["台灣", "history", "democratization", "politics"]
+author: "taiwan.md 社群"
+difficulty: "beginner"
+readingTime: 8
+featured: false
 ---
-
 # Taiwan's Democracy and Democratization
 
 > **30-second overview:** Taiwan's democratization refers to the successful transformation from the Chinese Nationalist Party (KMT) one-party authoritarian rule to a democratic, free nation beginning in the 1990s. This process, praised as the "Quiet Revolution," has made Taiwan a model for democratization in Chinese societies and ranks among the top democracies in international evaluations.
