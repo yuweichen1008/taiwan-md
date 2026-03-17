@@ -1,12 +1,8 @@
 ---
-title: 台灣美食
-description: 從夜市小吃到精緻料理的美食文化
-date: '2026-03-17'
-tags:
-- Hub
-difficulty: beginner
-featured: true
-author: Taiwan.md Contributors
+created: 2026-03-17
+tags: [美食, Hub]
+source: []
+status: 🌱 初稿（知識庫框架）
 ---
 
 # 台灣美食 🍜

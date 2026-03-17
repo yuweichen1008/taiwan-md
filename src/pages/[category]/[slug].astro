@@ -1,31 +1,109 @@
 ---
-export async function getStaticPaths() {
-  // 暫時建立一些示例文章路由
-  const sampleArticles = [
-    {
-      params: { category: 'history', slug: 'democracy' },
-      props: { 
-        title: '台灣民主化',
-        description: '台灣民主化是指從1990年代前後，台灣從中國國民黨一黨專政的威權體制成功轉型為民主自由國家的過程。',
-        content: '<h1>台灣民主化</h1><p>台灣民主化的過程...</p>'
-      }
-    },
-    {
-      params: { category: 'food', slug: 'night-market' },
-      props: { 
-        title: '台灣夜市文化',
-        description: '夜市是台灣庶民文化的重要體現，也是外國遊客認識台灣的重要窗口。',
-        content: '<h1>台灣夜市文化</h1><p>夜市文化的發展...</p>'
-      }
-    }
-  ];
+import { readdir, readFile } from 'fs/promises';
+import { resolve, join, basename } from 'path';
+import matter from 'gray-matter';
 
-  return sampleArticles;
+export async function getStaticPaths() {
+  const paths: any[] = [];
+  
+  // 類別對應到資料夾名稱
+  const categoryMapping: Record<string, string> = {
+    'history': 'History',
+    'geography': 'Geography', 
+    'culture': 'Culture',
+    'food': 'Food',
+    'art': 'Art',
+    'music': 'Music',
+    'technology': 'Technology',
+    'nature': 'Nature',
+    'people': 'People',
+    'society': 'Society',
+    'economy': 'Economy',
+    'lifestyle': 'Lifestyle'
+  };
+
+  for (const [categorySlug, folderName] of Object.entries(categoryMapping)) {
+    try {
+      // 中文版本
+      const zhFolderPath = resolve(process.cwd(), 'knowledge', folderName);
+      try {
+        const zhFiles = await readdir(zhFolderPath);
+        const zhMarkdownFiles = zhFiles.filter(file => file.endsWith('.md') && !file.startsWith('_'));
+        
+        for (const file of zhMarkdownFiles) {
+          const filePath = join(zhFolderPath, file);
+          const fileContent = await readFile(filePath, 'utf-8');
+          const { data: frontmatter, content } = matter(fileContent);
+          
+          // 檔案名稱作為 slug（去掉 .md）
+          const slug = basename(file, '.md');
+          
+          paths.push({
+            params: { 
+              category: categorySlug, 
+              slug: slug 
+            },
+            props: {
+              title: frontmatter.title || slug,
+              description: frontmatter.description || '',
+              content: content,
+              frontmatter: frontmatter,
+              lang: 'zh-TW'
+            }
+          });
+        }
+      } catch (err) {
+        console.log(`No Chinese folder found for ${folderName}:`, err.message);
+      }
+
+      // 英文版本
+      const enFolderPath = resolve(process.cwd(), 'knowledge', 'en', folderName);
+      try {
+        const enFiles = await readdir(enFolderPath);
+        const enMarkdownFiles = enFiles.filter(file => file.endsWith('.md') && !file.startsWith('_'));
+        
+        for (const file of enMarkdownFiles) {
+          const filePath = join(enFolderPath, file);
+          const fileContent = await readFile(filePath, 'utf-8');
+          const { data: frontmatter, content } = matter(fileContent);
+          
+          // 檔案名稱作為 slug（去掉 .md）
+          const slug = basename(file, '.md');
+          
+          paths.push({
+            params: { 
+              category: categorySlug, 
+              slug: slug 
+            },
+            props: {
+              title: frontmatter.title || slug,
+              description: frontmatter.description || '',
+              content: content,
+              frontmatter: frontmatter,
+              lang: 'en'
+            }
+          });
+        }
+      } catch (err) {
+        console.log(`No English folder found for ${folderName}:`, err.message);
+      }
+      
+    } catch (err) {
+      console.log(`Error processing category ${categorySlug}:`, err.message);
+    }
+  }
+
+  console.log(`Generated ${paths.length} paths for articles`);
+  paths.forEach(path => {
+    console.log(`Path: /${path.params.category}/${path.params.slug} (${path.props.title})`);
+  });
+
+  return paths;
 }
 
 import Layout from '../../layouts/Layout.astro';
 
-const { title, description, content } = Astro.props;
+const { title, description, content, frontmatter, lang } = Astro.props;
 const { category, slug } = Astro.params;
 
 const categoryInfo = {
@@ -44,6 +122,31 @@ const categoryInfo = {
 };
 
 const currentCategory = categoryInfo[category as keyof typeof categoryInfo];
+
+// 處理 Markdown 內容以支援基本 HTML 渲染
+function processMarkdown(markdownContent: string) {
+  return markdownContent
+    // 處理標題
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+    // 處理粗體和斜體
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    // 處理連結
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+    // 處理引用區塊
+    .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
+    // 處理段落
+    .replace(/^(?!<[h1-6]|<blockquote|<ul|<ol|<li)(.+)$/gm, '<p>$1</p>')
+    // 處理清單
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
+    // 清理多餘的空行
+    .replace(/\n\s*\n/g, '\n');
+}
+
+const processedContent = processMarkdown(content);
 ---
 
 <Layout 
@@ -73,46 +176,50 @@ const currentCategory = categoryInfo[category as keyof typeof categoryInfo];
         <p class="article-description">{description}</p>
 
         <div class="article-meta">
-          <div class="meta-item">
-            <span class="meta-icon">📖</span>
-            <span>3 分鐘閱讀</span>
-          </div>
+          {frontmatter.readingTime && (
+            <div class="meta-item">
+              <span class="meta-icon">📖</span>
+              <span>{frontmatter.readingTime} 分鐘閱讀</span>
+            </div>
+          )}
           
-          <div class="meta-item">
-            <span class="meta-icon">📅</span>
-            <span>{new Date().toLocaleDateString('zh-TW')}</span>
-          </div>
+          {frontmatter.date && (
+            <div class="meta-item">
+              <span class="meta-icon">📅</span>
+              <span>{new Date(frontmatter.date).toLocaleDateString('zh-TW')}</span>
+            </div>
+          )}
 
-          <div class="meta-item">
-            <span class="meta-icon">🎯</span>
-            <span class="difficulty beginner">入門</span>
-          </div>
+          {frontmatter.status && (
+            <div class="meta-item">
+              <span class="meta-icon">🎯</span>
+              <span class="status">{frontmatter.status}</span>
+            </div>
+          )}
+          
+          {lang && (
+            <div class="meta-item">
+              <span class="meta-icon">🌐</span>
+              <span>{lang === 'zh-TW' ? '繁體中文' : 'English'}</span>
+            </div>
+          )}
         </div>
       </header>
 
       <!-- Article Content -->
       <article class="article-content">
-        <div class="content-coming-soon">
-          <div class="coming-soon-icon">🚧</div>
-          <h2>內容開發中</h2>
-          <p>此文章正在撰寫中，很快就會與大家見面！</p>
-          <p class="article-preview">
-            <strong>預覽：</strong> {description}
-          </p>
-          
-          <div class="contribute-section">
-            <h3>想要貢獻這篇文章？</h3>
-            <p>Taiwan.md 是開源專案，歡迎大家一起參與內容創作！</p>
-            <div class="contribute-buttons">
-              <a href="https://github.com/frank890417/taiwan-md" target="_blank" class="btn-contribute">
-                📝 參與貢獻
-              </a>
-              <a href="/resources" class="btn-learn-more">
-                📚 了解更多
-              </a>
-            </div>
+        <div class="content" set:html={processedContent}></div>
+        
+        {frontmatter.source && (
+          <div class="sources">
+            <h3>參考資料</h3>
+            <ul>
+              {frontmatter.source.map((url: string) => (
+                <li><a href={url} target="_blank" rel="noopener">{url}</a></li>
+              ))}
+            </ul>
           </div>
-        </div>
+        )}
       </article>
 
       <!-- Back Navigation -->
@@ -221,110 +328,115 @@ const currentCategory = categoryInfo[category as keyof typeof categoryInfo];
     font-size: 1rem;
   }
 
-  .difficulty {
+  .status {
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     font-weight: 500;
     font-size: 0.8rem;
-  }
-
-  .difficulty.beginner {
-    background: #d1fae5;
-    color: #065f46;
+    background: #f0f9ff;
+    color: #0369a1;
   }
 
   .article-content {
     margin-bottom: 3rem;
+    line-height: 1.7;
   }
 
-  .content-coming-soon {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: #f8fafc;
-    border: 2px dashed #cbd5e1;
-    border-radius: 12px;
-  }
-
-  .coming-soon-icon {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .content-coming-soon h2 {
-    font-size: 2rem;
-    color: #1f2937;
-    margin-bottom: 1rem;
-    font-weight: 600;
-  }
-
-  .content-coming-soon p {
-    color: #6b7280;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+  .content {
     font-size: 1.1rem;
+    color: #374151;
   }
 
-  .article-preview {
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin: 2rem auto;
-    max-width: 600px;
-    text-align: left;
-  }
-
-  .contribute-section {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid #e5e7eb;
-  }
-
-  .contribute-section h3 {
-    font-size: 1.3rem;
+  .content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem 0;
     color: #1f2937;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem 0;
+    color: #1f2937;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+  }
+
+  .content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1.25rem 0 0.75rem 0;
+    color: #1f2937;
+  }
+
+  .content p {
     margin-bottom: 1rem;
   }
 
-  .contribute-section p {
-    margin-bottom: 2rem;
+  .content blockquote {
+    border-left: 4px solid #3b82f6;
+    background: #f8fafc;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #475569;
   }
 
-  .contribute-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+  .content ul, .content ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
   }
 
-  .btn-contribute, .btn-learn-more {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
+  .content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .content a {
+    color: #1e40af;
+    text-decoration: underline;
+  }
+
+  .content a:hover {
+    color: #1e3a8a;
+  }
+
+  .content strong {
+    font-weight: 600;
+    color: #1f2937;
+  }
+
+  .sources {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .sources h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+  }
+
+  .sources ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .sources li {
+    margin-bottom: 0.5rem;
+  }
+
+  .sources a {
+    color: #1e40af;
     text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: all 0.2s ease;
+    font-size: 0.9rem;
   }
 
-  .btn-contribute {
-    background: #1e40af;
-    color: white;
-  }
-
-  .btn-contribute:hover {
-    background: #1e3a8a;
-  }
-
-  .btn-learn-more {
-    background: #f3f4f6;
-    color: #374151;
-    border: 1px solid #d1d5db;
-  }
-
-  .btn-learn-more:hover {
-    background: #e5e7eb;
+  .sources a:hover {
+    text-decoration: underline;
   }
 
   .back-navigation {
@@ -365,11 +477,6 @@ const currentCategory = categoryInfo[category as keyof typeof categoryInfo];
     .article-meta {
       flex-direction: column;
       gap: 0.75rem;
-    }
-
-    .contribute-buttons {
-      flex-direction: column;
-      align-items: center;
     }
 
     .back-navigation {

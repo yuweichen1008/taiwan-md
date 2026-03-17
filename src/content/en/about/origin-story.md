@@ -1,16 +1,11 @@
 ---
-title: Origin Story — The Birth of Taiwan.md
-description: From a street walk inspiration to curating a complete portal for Taiwan
-  to the world
-date: '2026-03-17'
-tags:
-- about
-- origin
-- taiwan-md
-author: Taiwan.md
+title: "Origin Story — The Birth of Taiwan.md"
+description: "From a street walk inspiration to curating a complete portal for Taiwan to the world"
+date: 2026-03-17
+tags: ["about", "origin", "taiwan-md"]
+author: "Taiwan.md"
 readingTime: 4
 featured: true
-difficulty: beginner
 ---
 
 # Taiwan.md Origin Story

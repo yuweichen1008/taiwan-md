@@ -1,12 +1,8 @@
 ---
-title: 台灣地理
-description: 台灣的自然環境、地形特色與區域發展
-date: '2026-03-17'
-tags:
-- Hub
-difficulty: beginner
-featured: true
-author: Taiwan.md Contributors
+created: 2026-03-17
+tags: [地理, Hub]
+source: []
+status: 🌱 初稿（知識庫框架）
 ---
 
 # 台灣地理 🗺️

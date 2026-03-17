@@ -1,14 +1,3 @@
----
-title: 台灣知識庫 🇹🇼
-description: '> **歡迎來到台灣 SSOT（Single Source of Truth）知識庫**  ...'
-date: '2026-03-17'
-tags:
-- Taiwan
-difficulty: beginner
-author: Taiwan.md Contributors
-featured: false
----
-
 # 台灣知識庫 🇹🇼
 
 > **歡迎來到台灣 SSOT（Single Source of Truth）知識庫**  

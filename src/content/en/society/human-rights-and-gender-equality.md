@@ -1,18 +1,14 @@
 ---
-tags:
-- society
-- human rights
-- gender equality
-- same-sex marriage
-- transitional justice
+created: 2026-03-17
+tags: [society, human rights, gender equality, same-sex marriage, transitional justice]
+source: [https://en.wikipedia.org/wiki/Same-sex_marriage_in_Taiwan, https://en.wikipedia.org/wiki/Transitional_justice]
+status: 🌱 Draft (English translation)
 title: Human Rights and Gender Equality
-description: Taiwan's progressive journey in human rights protection and gender equality,
-  from authoritarian human rights violations to becoming Asia's pioneer in human rights
-date: '2026-03-17'
+description: Taiwan's progressive journey in human rights protection and gender equality, from authoritarian human rights violations to becoming Asia's pioneer in human rights
+date: 2026-03-17
 author: Taiwan.md
 readingTime: 9
 featured: false
-difficulty: beginner
 ---
 
 # Human Rights and Gender Equality

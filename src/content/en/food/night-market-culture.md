@@ -1,16 +1,9 @@
 ---
-title: Taiwan's Night Market Culture
-description: '> **30-second overview:** Taiwan''s night markets are the most representative
-  form of grassroots food culture, combining dining, shopping, and entertainment.
-  Developed over more than 100 years since th...'
-date: '2026-03-17'
-tags:
-- Taiwan
-difficulty: beginner
-author: Taiwan.md Contributors
-featured: false
+created: 2026-03-17
+tags: [food, night market, street food, culture, tourism]
+source: [https://en.wikipedia.org/wiki/Taiwan_night_market]
+status: 🌱 Draft (English translation)
 ---
-
 
 # Taiwan's Night Market Culture
 

@@ -1,12 +1,8 @@
 ---
-title: 台灣生活
-description: 台灣人的生活方式與價值觀
-date: '2026-03-17'
-tags:
-- Hub
-difficulty: beginner
-featured: true
-author: Taiwan.md Contributors
+created: 2026-03-17
+tags: [生活, Hub]
+source: []
+status: 🌱 初稿（知識庫框架）
 ---
 
 # 台灣生活 🏠

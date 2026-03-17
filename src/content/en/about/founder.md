@@ -1,15 +1,11 @@
 ---
-title: Founder — Che-Yu Wu
-description: New media artist, MonoLab founder, and Taiwan.md initiator
-date: '2026-03-17'
-tags:
-- about
-- founder
-- artist
-author: Taiwan.md
+title: "Founder — Che-Yu Wu"
+description: "New media artist, MonoLab founder, and Taiwan.md initiator"
+date: 2026-03-17
+tags: ["about", "founder", "artist"]
+author: "Taiwan.md"
 readingTime: 3
 featured: false
-difficulty: beginner
 ---
 
 # Founder — Che-Yu Wu

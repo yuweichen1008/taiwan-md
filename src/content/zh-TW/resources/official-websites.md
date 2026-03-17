@@ -1,14 +1,9 @@
 ---
-title: 台灣官方網站資源大全 🏛️
-description: 完整收錄 81 個台灣政府機關、文化藝術機構、開放資料平台等官方網站，提供政府服務、政策資訊、文化內容、統計數據等一站式入口。從五院體制到各部會，從故宮博物院到開放資料平台，全方位掌握台灣官方數位資源。
-date: '2026-03-17'
-tags:
-- Taiwan
-difficulty: beginner
-author: Taiwan.md Contributors
-featured: false
+created: 2026-03-17
+tags: [resources, government, official, Taiwan.md]
+source: [Obsidian vault]
+status: 🌱 初稿（官方網站資源大全）
 ---
-
 
 # 台灣官方網站資源大全 🏛️
 

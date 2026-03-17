@@ -1,16 +1,9 @@
 ---
-title: Taiwan's Semiconductor Industry (TSMC-Centered)
-description: '> **30-second overview:** Taiwan''s semiconductor industry, led by Taiwan
-  Semiconductor Manufacturing Company (TSMC), is the world''s most important chip
-  manufacturing base. TSMC dominates global advanc...'
-date: '2026-03-17'
-tags:
-- Taiwan
-difficulty: beginner
-author: Taiwan.md Contributors
-featured: false
+created: 2026-03-17
+tags: [technology, semiconductor, TSMC, industry]
+source: [https://en.wikipedia.org/wiki/TSMC]
+status: 🌱 Draft (English translation)
 ---
-
 
 # Taiwan's Semiconductor Industry (TSMC-Centered)
 

@@ -1,12 +1,8 @@
 ---
-title: 台灣科技
-description: 科技島的創新發展與數位轉型
-date: '2026-03-17'
-tags:
-- Hub
-difficulty: beginner
-featured: true
-author: Taiwan.md Contributors
+created: 2026-03-17
+tags: [科技, Hub]
+source: []
+status: 🌱 初稿（知識庫框架）
 ---
 
 # 台灣科技 💻

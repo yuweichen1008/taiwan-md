@@ -1,12 +1,8 @@
 ---
-title: 台灣文化
-description: 多元族群文化的融合與在地特色
-date: '2026-03-17'
-tags:
-- Hub
-difficulty: beginner
-featured: true
-author: Taiwan.md Contributors
+created: 2026-03-17
+tags: [文化, Hub]
+source: []
+status: 🌱 初稿（知識庫框架）
 ---
 
 # 台灣文化 🎭

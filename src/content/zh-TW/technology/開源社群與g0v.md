@@ -1,16 +1,14 @@
 ---
-tags:
-- Technology
-- 開源社群
-- g0v
-- 公民科技
+created: 2026-03-17
+tags: [Technology, 開源社群, g0v, 公民科技]
+source: [https://g0v.tw/zh-TW/, https://zh.wikipedia.org/wiki/G0v.tw]
+status: 🌱 初稿
 title: 開源社群與g0v
 description: 台灣蓬勃的開源軟體社群與g0v零時政府，推動公民科技與開放政府的創新實踐
-date: '2026-03-17'
+date: 2026-03-17
 author: Taiwan.md
 readingTime: 8
 featured: false
-difficulty: beginner
 ---
 
 # 開源社群與g0v

@@ -1,12 +1,8 @@
 ---
-title: 台灣社會
-description: 社會變遷與當代議題的深度探討
-date: '2026-03-17'
-tags:
-- Hub
-difficulty: beginner
-featured: true
-author: Taiwan.md Contributors
+created: 2026-03-17
+tags: [社會, Hub]
+source: []
+status: 🌱 初稿（知識庫框架）
 ---
 
 # 台灣社會 🏛️

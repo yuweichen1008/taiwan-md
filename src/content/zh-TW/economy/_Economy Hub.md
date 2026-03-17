@@ -1,12 +1,8 @@
 ---
-title: 台灣經濟
-description: 經濟奇蹟的成因與轉型挑戰
-date: '2026-03-17'
-tags:
-- Hub
-difficulty: beginner
-featured: true
-author: Taiwan.md Contributors
+created: 2026-03-17
+tags: [經濟, Hub]
+source: []
+status: 🌱 初稿（知識庫框架）
 ---
 
 # 台灣經濟 💰

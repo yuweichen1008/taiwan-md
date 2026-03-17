@@ -1,16 +1,9 @@
 ---
-title: Taiwan Official Websites Directory 🏛️
-description: '> **30-Second Overview:** Comprehensive collection of 81+ official websites
-  covering Taiwan''s government agencies, cultural institutions, and open data platforms.
-  From the five-branch government syste...'
-date: '2026-03-17'
-tags:
-- Taiwan
-difficulty: beginner
-author: Taiwan.md Contributors
-featured: false
+created: 2026-03-17
+tags: [resources, government, official, Taiwan.md]
+source: [Obsidian vault]
+status: 🌱 Draft (Taiwan Official Websites Directory)
 ---
-
 
 # Taiwan Official Websites Directory 🏛️
 
