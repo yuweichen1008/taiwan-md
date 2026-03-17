@@ -32,23 +32,50 @@ for (const cat of categories) {
     <section class="hero">
       <h1>Taiwan.md</h1>
       <p class="subtitle">The open-source, AI-friendly knowledge base about Taiwan</p>
+      <p class="value-prop">The open-source knowledge base that helps the world truly understand Taiwan</p>
       <p class="tagline">Curated by people who love Taiwan. For everyone — humans and AI alike.</p>
       <div class="cta">
         <a href="#explore" class="btn primary">Start Exploring</a>
         <a href="https://github.com/frank890417/taiwan-md" class="btn secondary">⭐ GitHub</a>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-number">🏝️ 400+</span>
+          <span class="stat-label">years of history</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">🌿 59,000+</span>
+          <span class="stat-label">species</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">🗳️ Asia's first</span>
+          <span class="stat-label">democracy</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">🔧 90%</span>
+          <span class="stat-label">global advanced chips</span>
+        </div>
       </div>
     </section>
 
     <section id="explore" class="explore">
       <h2>Explore Taiwan</h2>
       <div class="grid">
-        {categories.map(cat => (
-          <a href={`/en/${cat.id}`} class="card">
-            <span class="emoji">{cat.emoji}</span>
-            <h3>{cat.name}</h3>
-            <span class="count">{articleCounts[cat.id] || 0} articles</span>
-          </a>
-        ))}
+        {categories.map(cat => {
+          const count = articleCounts[cat.id] || 0;
+          const hasArticles = count > 0;
+          return (
+            <a href={hasArticles ? `/en/${cat.id}` : '#'} class={`card ${!hasArticles ? 'coming-soon' : ''}`}>
+              <span class="emoji">{cat.emoji}</span>
+              <h3>{cat.name}</h3>
+              {hasArticles ? (
+                <span class="count">{count} articles</span>
+              ) : (
+                <span class="badge">Coming Soon</span>
+              )}
+            </a>
+          );
+        })}
       </div>
     </section>
   </main>
@@ -63,6 +90,13 @@ for (const cat of categories) {
   }
   .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
   .subtitle { font-size: 1.3rem; opacity: 0.9; margin-bottom: 0.5rem; }
+  .value-prop { 
+    font-size: 1.1rem; 
+    opacity: 0.95; 
+    margin-bottom: 0.5rem; 
+    color: #fbbf24;
+    font-weight: 500;
+  }
   .tagline { opacity: 0.7; margin-bottom: 2rem; }
   .cta { display: flex; gap: 1rem; justify-content: center; }
   .btn {
@@ -101,4 +135,48 @@ for (const cat of categories) {
   .emoji { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
   .card h3 { font-size: 1rem; margin-bottom: 0.25rem; }
   .count { font-size: 0.8rem; color: #94a3b8; }
+  .badge { 
+    font-size: 0.7rem; 
+    color: #f97316; 
+    background: rgba(249, 115, 22, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-weight: 500;
+  }
+  .card.coming-soon {
+    opacity: 0.7;
+    cursor: default;
+    pointer-events: none;
+  }
+  .card.coming-soon .emoji {
+    opacity: 0.6;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin: 3rem 0 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stat {
+    text-align: center;
+    padding: 0.75rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+  }
+  .stat-number {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fbbf24;
+    margin-bottom: 0.25rem;
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    color: #e2e8f0;
+  }
 </style>

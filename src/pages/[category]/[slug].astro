@@ -88,6 +88,53 @@ const otherCategories = Object.keys(categoryConfig)
     ...categoryConfig[cat as CategoryKey]
   }));
 
+// 延伸閱讀：同分類的其他文章
+const categoryMapping: Record<string, string> = {
+  'history': 'History',
+  'geography': 'Geography', 
+  'culture': 'Culture',
+  'food': 'Food',
+  'art': 'Art',
+  'music': 'Music',
+  'technology': 'Technology',
+  'nature': 'Nature',
+  'people': 'People',
+  'society': 'Society',
+  'economy': 'Economy',
+  'lifestyle': 'Lifestyle'
+};
+
+let relatedArticles: any[] = [];
+try {
+  const folderName = categoryMapping[category as string];
+  if (folderName) {
+    const categoryFolderPath = resolve(process.cwd(), 'knowledge', folderName);
+    const files = await readdir(categoryFolderPath);
+    const markdownFiles = files.filter(file => file.endsWith('.md') && !file.startsWith('_'));
+    
+    for (const file of markdownFiles) {
+      const articleSlug = basename(file, '.md');
+      if (articleSlug !== slug) { // 排除當前文章
+        const filePath = join(categoryFolderPath, file);
+        const fileContent = await readFile(filePath, 'utf-8');
+        const { data: frontmatter } = matter(fileContent);
+        
+        relatedArticles.push({
+          title: frontmatter.title || articleSlug,
+          slug: articleSlug,
+          description: frontmatter.description || '',
+          category: category
+        });
+      }
+    }
+    
+    // 限制最多 3 篇
+    relatedArticles = relatedArticles.slice(0, 3);
+  }
+} catch (err) {
+  console.log(`Error loading related articles for ${category}:`, err.message);
+}
+
 // 處理 Markdown 內容以支援基本 HTML 渲染
 function processMarkdown(markdownContent: string) {
   return markdownContent
@@ -226,6 +273,26 @@ const processedContent = processMarkdown(content);
             </div>
           </div>
         </div>
+
+        <!-- 延伸閱讀：同分類其他文章 -->
+        {relatedArticles.length > 0 && (
+          <div class="related-articles">
+            <h3 class="related-title">延伸閱讀</h3>
+            <div class="related-grid">
+              {relatedArticles.map(article => (
+                <a href={`/${article.category}/${article.slug}`} class="related-card" style={`border-color: ${categoryInfo.color};`}>
+                  <div class="related-card-content">
+                    <h4 class="related-card-title" style={`color: ${categoryInfo.color};`}>{article.title}</h4>
+                    {article.description && (
+                      <p class="related-card-desc">{article.description}</p>
+                    )}
+                  </div>
+                  <div class="related-card-arrow" style={`color: ${categoryInfo.color};`}>→</div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
 
         <!-- More Articles -->
         <div class="more-articles">
@@ -610,6 +677,72 @@ const processedContent = processMarkdown(content);
   .share-btn.facebook:hover {
     background: #1877f2;
     color: white;
+  }
+
+  /* Related Articles */
+  .related-articles {
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .related-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+  }
+
+  .related-grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .related-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem;
+    background: #f9fafb;
+    border: 1px solid;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .related-card:hover {
+    background: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .related-card-content {
+    flex: 1;
+  }
+
+  .related-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+  }
+
+  .related-card-desc {
+    font-size: 0.875rem;
+    color: #6b7280;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .related-card-arrow {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    transition: transform 0.2s ease;
+  }
+
+  .related-card:hover .related-card-arrow {
+    transform: translateX(3px);
   }
 
   /* More Articles */
