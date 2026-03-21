@@ -60,7 +60,7 @@ export const dataUI = {
       'Structured datasets and statistical platforms released by government agencies',
     'data.category.1.item.1.name': 'Government Open Data Platform',
     'data.category.1.item.1.desc':
-      'Central open data portal with tens of thousands of datasets',
+      '2020 年，工程師用這裡的資料在 72 小時內做出口罩地圖，解決全國藥局排隊問題',
     'data.category.1.item.2.name': 'DGBAS Statistical Database',
     'data.category.1.item.2.desc':
       'Population, economy, price indices and core national statistics',
@@ -99,16 +99,16 @@ export const dataUI = {
       'Open source communities, fact-checking, and digital democracy tools',
     'data.category.3.item.1.name': 'g0v (gov-zero)',
     'data.category.3.item.1.desc':
-      "Taiwan's largest open-source civic tech community",
+      '2012 年創立，催生了口罩地圖、Cofacts、vTaiwan 等改變台灣的公民科技專案',
     'data.category.3.item.2.name': 'g0v Hackathon Events',
     'data.category.3.item.2.desc':
       'Bimonthly hackathons and open data community events',
     'data.category.3.item.3.name': 'Cofacts',
     'data.category.3.item.3.desc':
-      'Collaborative fact-checking chatbot for messaging apps',
+      'LINE 群組轉傳的假消息，任何人都能提交查核，已累積數萬筆查核紀錄',
     'data.category.3.item.4.name': 'vTaiwan',
     'data.category.3.item.4.desc':
-      'Digital democracy platform for public policy deliberation',
+      '用 Polis 演算法找共識，成功影響 Uber 管理條例、遠距教學法規等政策',
     'data.category.3.item.5.name': 'JOIN Platform',
     'data.category.3.item.5.desc':
       'Government proposals, petitions, and policy discussions',
@@ -119,9 +119,9 @@ export const dataUI = {
       'Investigative reporting, fact-checking organizations, and data-driven media',
     'data.category.4.item.1.name': 'The Reporter',
     'data.category.4.item.1.desc':
-      "Taiwan's leading non-profit investigative journalism outlet",
+      '2015 年創立，台灣第一個非營利深度調查媒體，多次揭露重大公共議題',
     'data.category.4.item.2.name': 'Taiwan FactCheck Center',
-    'data.category.4.item.2.desc': 'IFCN-certified fact-checking organization',
+    'data.category.4.item.2.desc': 'IFCN 國際事實查核聯盟認證，Facebook 第三方查核夥伴',
     'data.category.4.item.3.name': 'READr',
     'data.category.4.item.3.desc':
       'Data journalism and open data visualization',
@@ -195,6 +195,9 @@ export const dataUI = {
     // Taiwan Shape Section
     'data.taiwanShape.title':
       "🗺️ The Shape of Taiwan — AI Can't Draw Taiwan Correctly. Here's the Real Version.",
+    'data.taiwanComparison.title': 'AI 畫的台灣 vs 真正的台灣',
+    'data.taiwanComparison.aiGenerated': 'AI 生成（典型錯誤）',
+    'data.taiwanComparison.correct': '正確輪廓',
     'data.taiwanShape.story.p1':
       'Most AI image generation models lack structured geographic data for Taiwan in their training sets. The result: AI-generated images of Taiwan are often distorted, disproportionate, or confused with other islands.',
     'data.taiwanShape.story.p2':
@@ -250,6 +253,30 @@ export const dataUI = {
       'Visualization network of article connections',
     'data.footer.link3.name': 'Contribute',
     'data.footer.link3.description': 'How to contribute to Taiwan.md',
+
+    // Sector Names
+    'data.sector.semiconductor': 'Semiconductor',
+    'data.sector.electronicsManufacturing': 'Electronics Manufacturing',
+    'data.sector.electronicComponents': 'Electronic Components',
+    'data.sector.financial': 'Financial',
+    'data.sector.telecommunications': 'Telecommunications',
+    'data.sector.foodBeverage': 'Food & Beverage',
+    'data.sector.shipping': 'Shipping',
+    'data.sector.computerBrand': 'Computer Brand',
+    'data.sector.steel': 'Steel',
+    'data.sector.petrochemical': 'Petrochemical',
+    'data.sector.cement': 'Cement',
+    'data.sector.optics': 'Optics',
+    'data.sector.bicycle': 'Bicycle',
+    'data.sector.textileFiber': 'Textile & Fiber',
+    'data.sector.transportation': 'Transportation',
+    'data.sector.consumerElectronics': 'Consumer Electronics',
+    'data.sector.industrialComputer': 'Industrial Computer',
+    'data.sector.casing': 'Casing',
+    'data.sector.petrochemicalPanel': 'Petrochemical Panel',
+    'data.sector.server': 'Server',
+    'data.sector.pcb': 'PCB',
+    'data.sector.precisionMachinery': 'Precision Machinery',
 
     // Tooltip
     'data.tooltip.marketCap': 'Market Cap',
@@ -314,7 +341,7 @@ export const dataUI = {
     'data.category.1.title': '政府開放資料',
     'data.category.1.description': '政府機關釋出的結構化資料集與統計平台',
     'data.category.1.item.1.name': '政府資料開放平臺',
-    'data.category.1.item.1.desc': '政府開放資料統一入口,上萬筆資料集',
+    'data.category.1.item.1.desc': '2020 年，工程師用這裡的資料在 72 小時內做出口罩地圖，解決全國藥局排隊問題',
     'data.category.1.item.2.name': '主計總處統計資料庫',
     'data.category.1.item.2.desc': '人口、經濟、物價等核心國家統計',
     'data.category.1.item.3.name': '中選會選舉資料庫',
@@ -342,13 +369,13 @@ export const dataUI = {
     'data.category.3.title': '公民科技 (Civic Tech)',
     'data.category.3.description': '開源社群、事實查核與數位民主工具',
     'data.category.3.item.1.name': 'g0v 零時政府',
-    'data.category.3.item.1.desc': '台灣最大的開源公民科技社群',
+    'data.category.3.item.1.desc': '2012 年創立，催生了口罩地圖、Cofacts、vTaiwan 等改變台灣的公民科技專案',
     'data.category.3.item.2.name': 'KKTIX 公民科技活動',
     'data.category.3.item.2.desc': 'g0v 黑客松、開放資料社群活動入口',
     'data.category.3.item.3.name': 'Cofacts 真的假的',
-    'data.category.3.item.3.desc': '群眾協作的事實查核機器人',
+    'data.category.3.item.3.desc': 'LINE 群組轉傳的假消息，任何人都能提交查核，已累積數萬筆查核紀錄',
     'data.category.3.item.4.name': 'vTaiwan',
-    'data.category.3.item.4.desc': '數位民主討論平台,法規政策公民審議',
+    'data.category.3.item.4.desc': '用 Polis 演算法找共識，成功影響 Uber 管理條例、遠距教學法規等政策',
     'data.category.3.item.5.name': 'JOIN 公共政策參與平台',
     'data.category.3.item.5.desc': '政府提案、連署、政策討論',
 
@@ -356,9 +383,9 @@ export const dataUI = {
     'data.category.4.title': '資料新聞與查核',
     'data.category.4.description': '深度調查報導、事實查核與資料新聞媒體',
     'data.category.4.item.1.name': '報導者',
-    'data.category.4.item.1.desc': '台灣非營利深度調查媒體',
+    'data.category.4.item.1.desc': '2015 年創立，台灣第一個非營利深度調查媒體，多次揭露重大公共議題',
     'data.category.4.item.2.name': '台灣事實查核中心',
-    'data.category.4.item.2.desc': 'IFCN 認證事實查核機構',
+    'data.category.4.item.2.desc': 'IFCN 國際事實查核聯盟認證，Facebook 第三方查核夥伴',
     'data.category.4.item.3.name': 'READr 讀+',
     'data.category.4.item.3.desc': '資料新聞與開放資料視覺化報導',
     'data.category.4.item.4.name': '典藏 ARTouch',
@@ -415,6 +442,9 @@ export const dataUI = {
 
     // Taiwan Shape Section
     'data.taiwanShape.title': '🗺️ 台灣的形狀',
+    'data.taiwanComparison.title': 'AI 畫的台灣 vs 真正的台灣',
+    'data.taiwanComparison.aiGenerated': 'AI 生成（典型錯誤）',
+    'data.taiwanComparison.correct': '正確輪廓',
     'data.taiwanShape.story.p1': 'AI 畫的台灣都是錯的。這是正確版本。',
     'data.taiwanShape.story.p2':
       '大多數 AI 圖像生成模型的訓練資料中，缺乏結構化的台灣地理資料。結果就是形狀扭曲、比例失真、甚至跟其他島嶼搞混。 Taiwan.md 提供正確、開源、可自由使用的台灣 SVG 輪廓圖，讓每個需要「台灣長什麼樣子」的場景都有標準答案。',
@@ -460,6 +490,30 @@ export const dataUI = {
     'data.footer.link2.description': '文章連結的視覺化網絡',
     'data.footer.link3.name': '貢獻指南',
     'data.footer.link3.description': '如何參與 Taiwan.md 的建設',
+
+    // Sector Names (Chinese)
+    'data.sector.semiconductor': '半導體',
+    'data.sector.electronicsManufacturing': '電子代工',
+    'data.sector.electronicComponents': '電子零件',
+    'data.sector.financial': '金融',
+    'data.sector.telecommunications': '電信',
+    'data.sector.foodBeverage': '食品飲料',
+    'data.sector.shipping': '航運',
+    'data.sector.computerBrand': '電腦品牌',
+    'data.sector.steel': '鋼鐵',
+    'data.sector.petrochemical': '石化',
+    'data.sector.cement': '水泥',
+    'data.sector.optics': '光學',
+    'data.sector.bicycle': '自行車',
+    'data.sector.textileFiber': '紡織纖維',
+    'data.sector.transportation': '運輸',
+    'data.sector.consumerElectronics': '消費電子',
+    'data.sector.industrialComputer': '工業電腦',
+    'data.sector.casing': '機殼',
+    'data.sector.petrochemicalPanel': '面板',
+    'data.sector.server': '伺服器',
+    'data.sector.pcb': 'PCB',
+    'data.sector.precisionMachinery': '精密機械',
 
     // Tooltip
     'data.tooltip.marketCap': '市值',
